@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>puzzlegame</title>
+</head>
+<body>
+<div>
+<!--<button type="button"onclick="ham1()"><img src="funny-cat1_part1x1.jpg"id="hinh1"width="300"height="100"></button>-->
+<input type="image" id="image1" src="funny-cat1_part1x1.jpg" height="160" width="800" alt="hinh1" onclick="hinh1();"/>
+<input type="image" id="image2" src="monkey_part2x1.jpg" height="160" width="800" alt="hinh2" onclick="hinh2()"/>
+<input type="image" id="image3" src="funny-cat1_part3x1.jpg" height="160" width="800" alt="hinh3" onclick="hinh3()"/>
+<input type="image" id="image4" src="monkey_part4x1.jpg" height="160" width="800" alt="hinh4" onclick="hinh4()"/>
+<input type="image" id="image5" src="panda_swap_part5x1.jpg" height="160" width="800" alt="hinh5" onclick="hinh5()"/>
+</div>
+<p id="message"></p>
+<script>
+    let cat1 = "http://localhost:63342/BP_session03_puzzlegame/funny-cat1_part1x1.jpg";
+    let cat2 = "http://localhost:63342/BP_session03_puzzlegame/funny-cat1_part2x1.jpg";
+    let cat3 = "http://localhost:63342/BP_session03_puzzlegame/funny-cat1_part3x1.jpg";
+    let cat4 = "http://localhost:63342/BP_session03_puzzlegame/funny-cat1_part4x1.jpg";
+    let cat5 = "http://localhost:63342/BP_session03_puzzlegame/funny-cat1_part5x1.jpg";
+    // let cat = cat1+cat2+cat3+cat4+cat5;
+
+    let monkey1 = "http://localhost:63342/BP_session03_puzzlegame/monkey_part1x1.jpg";
+    let monkey2 = "http://localhost:63342/BP_session03_puzzlegame/monkey_part2x1.jpg";
+    let monkey3 = "http://localhost:63342/BP_session03_puzzlegame/monkey_part3x1.jpg";
+    let monkey4 = "http://localhost:63342/BP_session03_puzzlegame/monkey_part4x1.jpg";
+    let monkey5 = "http://localhost:63342/BP_session03_puzzlegame/monkey_part5x1.jpg";
+    // let monkey =  monkey1+monkey2+ monkey3+ monkey4+ monkey5;
+
+    let panda1 = "http://localhost:63342/BP_session03_puzzlegame/panda_swap_part1x1.jpg";
+    let panda2 = "http://localhost:63342/BP_session03_puzzlegame/panda_swap_part2x1.jpg";
+    let panda3 = "http://localhost:63342/BP_session03_puzzlegame/panda_swap_part3x1.jpg";
+    let panda4 = "http://localhost:63342/BP_session03_puzzlegame/panda_swap_part4x1.jpg";
+    let panda5 = "http://localhost:63342/BP_session03_puzzlegame/panda_swap_part5x1.jpg";
+    // let panda = panda1+panda2+panda3+panda4+panda5;
+    // let anh1 = [cat1,monkey1,panda1];
+    //     let img1 = document.getElementById("image1").src;
+    //     let img2 = document.getElementById("image2").src;
+    //     let img3 = document.getElementById("image3").src;
+    //     let img4 = document.getElementById("image4").src;
+    //     let img5 = document.getElementById("image5").src;
+    //     let picture = img1+img2+img3+img4+img5;
+        // function hinh1(){
+        //     if(img1 == cat1){
+        //         img1=monkey1
+        //     }else if(img1===monkey1){
+        //         img1=panda1
+        //     }else if(img1===panda1){
+        //         img1=cat1
+        //     }
+    function hinh1() {
+        if (document.getElementById("image1").src == cat1){
+            document.getElementById("image1").src = monkey1
+
+        }else if (document.getElementById("image1").src == monkey1) {
+            document.getElementById("image1").src = panda1
+        }else if (document.getElementById("image1").src == panda1){
+            document.getElementById("image1").src =cat1
+        }
+check();
+    }
+    function hinh2() {
+        if (document.getElementById("image2").src == cat2){
+            document.getElementById("image2").src = monkey2
+
+        }else if (document.getElementById("image2").src == monkey2) {
+            document.getElementById("image2").src = panda2
+        }else if (document.getElementById("image2").src == panda2){
+            document.getElementById("image2").src =cat2
+        }
+check();
+    }
+    function hinh3() {
+        if (document.getElementById("image3").src == cat3){
+            document.getElementById("image3").src = monkey3
+
+        }else if (document.getElementById("image3").src == monkey3) {
+            document.getElementById("image3").src = panda3
+        }else if (document.getElementById("image3").src == panda3){
+            document.getElementById("image3").src =cat3
+        }
+check();
+    }
+    function hinh4() {
+        if (document.getElementById("image4").src == cat4){
+            document.getElementById("image4").src = monkey4
+
+        }else if (document.getElementById("image4").src == monkey4) {
+            document.getElementById("image4").src = panda4
+        }else if (document.getElementById("image4").src == panda4){
+            document.getElementById("image4").src =cat4
+        }
+check();
+    }
+    function hinh5() {
+        if (document.getElementById("image5").src == cat5){
+            document.getElementById("image5").src = monkey5
+
+        }else if (document.getElementById("image5").src == monkey5) {
+            document.getElementById("image5").src = panda5
+        }else if (document.getElementById("image5").src == panda5){
+            document.getElementById("image5").src =cat5
+        }
+check();
+    }
+function check(){
+        if((document.getElementById("image1").src == cat1)
+            &&(document.getElementById("image2").src == cat2)
+    &&(document.getElementById("image3").src == cat3)
+    &&(document.getElementById("image4").src == cat4)
+    &&(document.getElementById("image5").src == cat5)){
+            (document.getElementById("message").innerText = "Good Job!")
+        }
+    if((document.getElementById("image1").src == monkey1)
+        &&(document.getElementById("image2").src == monkey2)
+        &&(document.getElementById("image3").src == monkey3)
+        &&(document.getElementById("image4").src == monkey4)
+        &&(document.getElementById("image5").src == monkey5)){
+        (document.getElementById("message").innerText = "Good Job!")
+    }
+    if((document.getElementById("image1").src == panda1)
+        &&(document.getElementById("image2").src == panda2)
+        &&(document.getElementById("image3").src == panda3)
+        &&(document.getElementById("image4").src == panda4)
+        &&(document.getElementById("image5").src == panda5)){
+        (document.getElementById("message").innerText = "Good Job!")
+    }
+}
+
+   </script>
+
+</body>
+</html>
